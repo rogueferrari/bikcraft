@@ -1,5 +1,4 @@
 // Deixar selecionado o link que o usuário se encontra
-
 const links = document.querySelectorAll(".header-menu a");
 
 function ativarLink(link) {
@@ -11,3 +10,13 @@ function ativarLink(link) {
 }
 
 links.forEach(ativarLink);
+
+// Ativar itens do orçamento
+const parametros = new URLSearchParams(location.search); //retorna um array com parâmetros da busca.
+function ativarProduto(parametro) {
+  const elemento = document.getElementById(parametro);
+  if (elemento) {
+    elemento.checked = true;
+  }
+}
+parametros.forEach(ativarProduto);
